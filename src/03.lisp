@@ -56,16 +56,16 @@
                      :when (eql 2 (length nums))
                        :sum (apply #'* nums))))
 
-(defun solve-1 ()
-  (with-open-file (in "./input/03.txt")
-    (loop :for line := (read-line in nil nil)
+(defun parse-file (file fn)
+  (loop :for line := (read-line file nil nil)
           :while line
           :collect line :into machine
-          :finally (return (sum-parts machine)))))
+          :finally (return (funcall fn machine))))
+
+(defun solve-1 ()
+  (with-open-file (in "./input/03.txt")
+    (parse-file in #'sum-parts)))
 
 (defun solve-2 ()
   (with-open-file (in "./input/03.txt")
-    (loop :for line := (read-line in nil nil)
-          :while line
-          :collect line :into machine
-          :finally (return (sum-gears machine)))))
+    (parse-file in #'sum-gears)))
