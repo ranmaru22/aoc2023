@@ -9,5 +9,6 @@
   :components ((:file "package")
                (:module "src"
                 :components
-                ((:file "01"))
-                ((:file "02")))))
+                ((:file "01")
+                 (:file "02")
+                 (:file "03")))))
