@@ -11,4 +11,5 @@
                 :components
                 ((:file "01")
                  (:file "02")
-                 (:file "03")))))
+                 (:file "03")
+                 (:file "04")))))
